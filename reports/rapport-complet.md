@@ -170,8 +170,19 @@ monitoring, analyse des biais et stratégie de réentraînement.
   doivent être confirmés après installation et exécution d’Orange.
 - Le fichier `.pkcls` doit être exporté par Orange lui-même ; il n’est pas
   remplacé par un pickle scikit-learn.
-- Les captures d’écran réelles ne sont pas incluses lorsqu’elles n’étaient pas
-  disponibles dans les fichiers fournis.
+- Les illustrations ci-dessous sont extraites du compte rendu PDF fourni par
+  l’étudiant. Elles sont présentées comme références visuelles et non comme
+  preuve d’une nouvelle exécution locale.
+
+### Illustrations fournies
+
+![Résultats et matrice de confusion](../assets/illustrations/compte-rendu-page-4.png)
+
+![Vue d’évaluation KNIME](../assets/illustrations/compte-rendu-page-5.png)
+
+![Workflow KNIME](../assets/illustrations/compte-rendu-page-6.png)
+
+![Résultats Orange](../assets/illustrations/compte-rendu-page-7.png)
 
 ## 8. Livrables
 

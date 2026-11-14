@@ -82,6 +82,15 @@ document.add_paragraph(
     "workflow Orange, workflow KNIME exécuté, vue Confusion Matrix et Accuracy statistics. "
     "Les fichiers .ows, .knwf et .pkcls doivent être exportés depuis les applications correspondantes."
 )
+document.add_paragraph(
+    "Les illustrations ci-dessous sont extraites du compte rendu PDF fourni avec le TP. "
+    "Elles servent de référence visuelle pour les vues Orange/KNIME et ne constituent "
+    "pas une nouvelle exécution locale."
+)
+illustrations = ROOT / "assets" / "illustrations"
+for image in sorted(illustrations.glob("*.png")):
+    document.add_paragraph(image.stem.replace("-", " ").title())
+    document.add_picture(str(image), width=Inches(6.2))
 
 document.save(REPORT)
 print(REPORT)
