@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scheme version="2.0" title="Détection de fraude - Orange" description="Workflow du TP complémentaire">
+  <nodes>
+    <node id="0" name="File" qualified_name="Orange.widgets.data.owfile.OWFile" project_name="Orange3" version="3.41.0" title="File" position="(80.0, 180.0)" />
+    <node id="1" name="Data Sampler" qualified_name="Orange.widgets.data.owdatasampler.OWDataSampler" project_name="Orange3" version="3.41.0" title="Data Sampler" position="(280.0, 180.0)" />
+    <node id="2" name="Preprocess" qualified_name="Orange.widgets.data.owpreprocess.OWPreprocess" project_name="Orange3" version="3.41.0" title="Normalize Features" position="(280.0, 340.0)" />
+    <node id="3" name="Logistic Regression" qualified_name="Orange.widgets.model.owlogisticregression.OWLogisticRegression" project_name="Orange3" version="3.41.0" title="Logistic Regression" position="(500.0, 80.0)" />
+    <node id="4" name="kNN" qualified_name="Orange.widgets.model.owknn.OWKNN" project_name="Orange3" version="3.41.0" title="kNN" position="(500.0, 180.0)" />
+    <node id="5" name="Tree" qualified_name="Orange.widgets.model.owtree.OWTreeLearner" project_name="Orange3" version="3.41.0" title="Tree" position="(500.0, 280.0)" />
+    <node id="6" name="Random Forest" qualified_name="Orange.widgets.model.owrandomforest.OWRandomForest" project_name="Orange3" version="3.41.0" title="Random Forest" position="(500.0, 380.0)" />
+    <node id="7" name="Gradient Boosting" qualified_name="Orange.widgets.model.owgradientboosting.OWGradientBoosting" project_name="Orange3" version="3.41.0" title="Gradient Boosting" position="(500.0, 480.0)" />
+    <node id="8" name="Test and Score" qualified_name="Orange.widgets.evaluate.owtestandscore.OWTestAndScore" project_name="Orange3" version="3.41.0" title="Test and Score" position="(760.0, 220.0)" />
+    <node id="9" name="Confusion Matrix" qualified_name="Orange.widgets.evaluate.owconfusionmatrix.OWConfusionMatrix" project_name="Orange3" version="3.41.0" title="Confusion Matrix" position="(980.0, 220.0)" />
+  </nodes>
+  <links>
+    <link id="0" source_node_id="0" source_channel="Data" sink_node_id="1" sink_channel="Data" enabled="true" />
+    <link id="1" source_node_id="1" source_channel="Data Sample" sink_node_id="8" sink_channel="Data" enabled="true" />
+    <link id="2" source_node_id="1" source_channel="Data Sample" sink_node_id="2" sink_channel="Data" enabled="true" />
+    <link id="3" source_node_id="2" source_channel="Preprocessor" sink_node_id="4" sink_channel="Preprocessor" enabled="true" />
+    <link id="4" source_node_id="3" source_channel="Learner" sink_node_id="8" sink_channel="Learner" enabled="true" />
+    <link id="5" source_node_id="4" source_channel="Learner" sink_node_id="8" sink_channel="Learner" enabled="true" />
+    <link id="6" source_node_id="5" source_channel="Learner" sink_node_id="8" sink_channel="Learner" enabled="true" />
+    <link id="7" source_node_id="6" source_channel="Learner" sink_node_id="8" sink_channel="Learner" enabled="true" />
+    <link id="8" source_node_id="7" source_channel="Learner" sink_node_id="8" sink_channel="Learner" enabled="true" />
+    <link id="9" source_node_id="8" source_channel="Evaluation Results" sink_node_id="9" sink_channel="Evaluation Results" enabled="true" />
+  </links>
+  <annotations />
+  <thumbnail />
+  <node_properties>
+    <properties node_id="0">
+      <option name="stored-path" type="str">..\data\transactions.csv</option>
+    </properties>
+    <properties node_id="1">
+      <option name="proportion" type="float">0.75</option>
+      <option name="stratify" type="bool">true</option>
+      <option name="random_seed" type="int">42</option>
+    </properties>
+  </node_properties>
+  <session_state />
+</scheme>

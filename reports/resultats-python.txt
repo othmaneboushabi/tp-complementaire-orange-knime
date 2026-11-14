@@ -1,0 +1,9 @@
+﻿Gradient Boosting confusion matrix:
+[[1099    9]
+ [  37  105]]
+Results:
+Logistic Regression: F1 classe 1 = 0.7016
+kNN normalise: F1 classe 1 = 0.7812
+Tree: F1 classe 1 = 0.7483
+Random Forest: F1 classe 1 = 0.7923
+Gradient Boosting: F1 classe 1 = 0.8203
