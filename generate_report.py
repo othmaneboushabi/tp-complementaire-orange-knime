@@ -87,6 +87,16 @@ document.add_paragraph(
     "Elles servent de référence visuelle pour les vues Orange/KNIME et ne constituent "
     "pas une nouvelle exécution locale."
 )
+document.add_heading("Captures produites localement", 2)
+document.add_paragraph(
+    "Les deux figures suivantes sont générées à partir du dataset et du protocole "
+    "Python du projet ; elles vérifient les résultats numériques présentés dans le rapport."
+)
+local_captures = ROOT / "assets" / "captures-locales"
+for image in sorted(local_captures.glob("*.png")):
+    document.add_paragraph(image.stem.replace("-", " ").title())
+    document.add_picture(str(image), width=Inches(6.2))
+document.add_heading("Captures de référence fournies", 2)
 illustrations = ROOT / "assets" / "illustrations"
 for image in sorted(illustrations.glob("*.png")):
     document.add_paragraph(image.stem.replace("-", " ").title())

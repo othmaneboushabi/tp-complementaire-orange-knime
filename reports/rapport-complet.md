@@ -184,6 +184,18 @@ monitoring, analyse des biais et stratégie de réentraînement.
 
 ![Résultats Orange](../assets/illustrations/compte-rendu-page-7.png)
 
+### Figures produites localement
+
+Les figures suivantes sont calculées à partir du dataset du projet et du
+protocole Python 75/25 stratifié avec seed 42.
+
+![Scores F1 locaux](../assets/captures-locales/resultats-f1-locaux.png)
+
+![Matrice de confusion locale](../assets/captures-locales/matrice-confusion-gb-locale.png)
+
+Le diagramme exporté par KNIME est disponible dans
+[workflow-knime.svg](../assets/captures-locales/workflow-knime.svg).
+
 ## 8. Livrables
 
 - Dataset : [data/transactions.csv](../data/transactions.csv)
